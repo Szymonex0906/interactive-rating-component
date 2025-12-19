@@ -1,0 +1,176 @@
+@import "./color";
+
+*{
+    font-size: 15px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Overpass", sans-serif;
+    font-optical-sizing: auto;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $grey950;
+    height: 100vh;
+
+    .hidden {
+        display: none !important;
+    }
+
+    .glossy {
+        // border: 1px solid red;
+        width: 2.8rem;
+        height: 2.8rem;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: $btn-bg;        
+    }
+
+    .main-container, .thank-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: $grey900;
+        border-radius: 1em;
+        // height: 55vh;
+        max-width: 90%;
+        margin:auto 0;
+        // padding:1.5em;
+        
+        .title {
+            color: $white;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .text {
+            color: $grey500;
+        }
+
+        .btn-list {
+            display: flex;
+            justify-content: space-between;
+            list-style: none;
+
+            .btn {
+                border: none;
+                color: $grey500;
+                font-weight: bold;
+                transition: .3s;
+                cursor: pointer;                
+
+                &:hover {
+                    background-color: $orange;
+                    color: $grey950;
+                }
+            }
+
+            .active {
+                background-color: $white;
+                color: $grey950;
+            }
+        }
+
+        .btn-submit {
+            background-color: $orange;
+            border:none;
+            border-radius: 2rem;
+            padding: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: .2em;
+            cursor: pointer;
+        }
+    }
+
+    .thank-container {
+        text-align: center;
+        justify-content: space-around;
+        align-items: center;
+        img {
+            width: 50%;
+        }
+        .result {
+            color: $orange;
+            background-color: $btn-bg;
+            padding: .5rem 1rem;
+            border-radius: 1rem;
+        }
+        .title {
+            margin-top: 1rem;
+            margin-bottom: -1rem;
+        }
+    }
+}
+
+@media screen {
+    @media (width <= 375px) {
+        .main-container,
+            .thank-container{
+            padding: 1.5rem;
+            height: 55vh;
+        }
+    }
+
+    @media(min-width: 376px){
+        .main-container,
+            .thank-container {
+            padding: 2rem;
+            height: 45vh;
+        }
+    }
+
+    @media(min-width: 600px){
+        .main-container,
+            .thank-container {
+            padding: 2rem;
+            height: 70vw;
+            width: 70vw;
+        }
+    }
+
+    @media(min-width: 768px){
+        .glossy {
+            min-height: 3.5rem;
+            min-width: 3.5rem;
+        }
+
+        .main-container,
+        .thank-container {
+            padding: 2rem;
+            height: 50vw;
+            width: 50vw;
+        }
+    }
+
+    @media(min-width: 1024px){
+        .main-container,
+            .thank-container {
+            height: 40vw;
+            width: 40vw;
+        }
+    }
+
+    @media(min-width: 1280px){
+        .main-container,
+            .thank-container {
+            height: 35vh;
+            width: 30vw;
+        }
+        .thank-container {
+            padding: 2.2rem;
+        }
+    }
+    @media(min-width: 1920px){
+        .main-container,
+            .thank-container {
+            width: 17vw;
+        }
+    }
+}
